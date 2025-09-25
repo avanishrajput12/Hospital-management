@@ -70,7 +70,7 @@ include 'nav.php';
 
     .emergency {
       margin-top: auto;
-      font-size: 14px;
+      font-size: 15px;
       color: #f4f4f4;
     }
 
