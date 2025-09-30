@@ -15,6 +15,25 @@
             background: #fff;
             color:#333
         }
+      h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 5s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+p{
+    color:white;
+}
 
        
 
@@ -23,18 +42,19 @@
         }
 
         .hero{
-            background-image: url("https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg");
-            height: 60vh;
+            background-image: url("https://previews.123rf.com/images/279photo/279photo1612/279photo161204550/68032363-concept-of-appointment-to-doctor-online-top-view-on-wooden-background.jpg");
+            height: 100vh;
             display: flex;
             align-items: center;
         }
 
         .btn{
-            padding: 10px 20px;
-            background-image: radial-gradient(#6523ED, blue);
+            padding: 10px 10px;
+            margin: 10px 10px;
+            background-color: #20e020ff;
             font-weight: 1000;
             font-size: 1.3em;
-            color: #edfece;
+            color: #f7faf6f8;
             border-radius: 30px;
         }
 
@@ -44,13 +64,7 @@
             background-color: #edfece
         }
 
-        .details{
-            background-image: url("https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg?semt=ais_incoming&w=740&q=80");
-            height:60vh;
-            width: 80;
-            align-items: center;
-            background-repeat: no-repeat;
-        }
+
 
         .h3{
             padding: 0px;
@@ -58,7 +72,7 @@
 
         /* Footer styling */
         footer {
-            background-color: #8be1ee;
+            background-color: #6e22e9ff;
             text-align: center;
             padding: 20px;
             color: #333;
@@ -94,12 +108,7 @@
 
         </div>
     </section>
-        
-    </section>
-    <section class="details">
-        <h3>Dr.Hazel Sharma(Heart Surgury Specialist)</h3>
-    </section>
-
+    
     <footer>
         <p>&copy; 2025 Godwin Medical College Hospital. All rights reserved.</p>
         <p>Designed by <a href="#">Godwin Web Team</a></p>
