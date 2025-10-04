@@ -36,6 +36,13 @@
       gap: 30px;
       flex-wrap: wrap;
     }
+     .contact-container:hover, .contact-container:focus {
+    border: 2px solid blue;
+    outline: none;
+    transform: translateY(-5px);
+    background-color:lightpink;
+    box-shadow: 0 8px 20px rgba(246, 10, 18, 0.94);
+  }
 
     .contact-form {
       flex: 1 1 300px;
