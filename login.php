@@ -201,11 +201,11 @@ include 'nav.php';
       <p>Please verify your credentials to continue</p>
 
       <form class="auth-form" method="POST" action="">
-        <select>
+        <select name="user">
           <option>Doctor</option>
           <option>Nurse</option>
           <option>admin</option>
-          <option>pactient</option>
+          <option>patient</option>
         </select>
 
         <input type="text" name="username" placeholder="Enter Username ID" />
@@ -233,14 +233,10 @@ if (isset($_REQUEST['login'])) {
     include "database.php";
     $db = new Database();
     $conn = $db->connect();
-
+    $user=$_REQUEST['user'];
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
-
-
-
-
-    // Prepared statement for secure query
+    if($user=="Doctor"){
     $stmt = $conn->prepare("SELECT doctor_id,name, password FROM doctors WHERE doctor_id = ?");
     $stmt->bind_param("i", $username);
     $stmt->execute();
@@ -249,11 +245,8 @@ if (isset($_REQUEST['login'])) {
 
     if ($row) {
         if ($password==$row['password']) {
-            // Password is correct, start session and redirect
             $_SESSION['name'] = $row['name'];
             $_SESSION['doctor_id'] = $row['doctor_id'];
-
-    
             echo "<script>window.location='checkstatus.php'</script>";
             exit();
 
@@ -265,5 +258,29 @@ if (isset($_REQUEST['login'])) {
     }
 
     $stmt->close();
+}
+else if($user=="patient"){
+   $stmt = $conn->prepare("SELECT patient_id,name, password FROM patients WHERE patient_id = ?");
+    $stmt->bind_param("i", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row) {
+        if ($password==$row['password']) {
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['patient_id'] = $row['patient_id'];
+            echo "<script>window.location='patientpanel.php'</script>";
+            exit();
+        } else {
+            echo "<script>alert('Invalid Password')</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid Username or User ID')</script>";
+    }
+
+    $stmt->close();
+
+}
 }
 ?>

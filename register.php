@@ -183,7 +183,7 @@ $pass=$_REQUEST['password'];
 $repass=$_REQUEST['confirm_password'];
 if($pass===$repass){
   $user_id=rand(11111,99999);
-  $sql="insert into patients(patient_id,name,dob,gender,phone,email,address)values('$user_id','$name','$dob','$gender','$phone','$email','$address')";
+  $sql="insert into patients(patient_id,name,dob,gender,phone,email,password,address)values('$user_id','$name','$dob','$gender','$phone','$email','$pass','$address')";
   mysqli_query($conn,$sql);
 }
 

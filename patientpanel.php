@@ -11,13 +11,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$appointments = [];
-    $doctor_id = $_SESSION['doctor_id'];
+    $appointments = [];
+    $patient_id = $_SESSION['patient_id'];
 
     $sql = "SELECT a.appointment_id, p.name AS patient_name, p.phone, a.appointment_date, a.appointment_time, a.status, a.notes
             FROM appointments a
             JOIN patients p ON a.patient_id = p.patient_id
-            WHERE a.doctor_id = '$doctor_id'
+            WHERE a.patient_id = '$patient_id'
             ORDER BY a.appointment_date, a.appointment_time";
 
     $result = $conn->query($sql);
@@ -31,7 +31,7 @@ $appointments = [];
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Doctor Dashboard</title>
+  <title>Patient Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -103,7 +103,7 @@ $appointments = [];
 </head>
 <body>
   <div class="container">
-    <h2>Doctor Dashboard - View Appointments</h2>
+    <h2>Patient Dashboard - Your Appointments</h2>
 
     
 
@@ -111,7 +111,7 @@ $appointments = [];
         <table>
           <tr>
             <th>ID</th>
-            <th>Patient Name</th>
+            <th>Doctor Name</th>
             <th>Phone</th>
             <th>Date</th>
             <th>Time</th>
@@ -131,7 +131,7 @@ $appointments = [];
           <?php endforeach; ?>
         </table>
       <?php else : ?>
-        <p class="no-data">❌ No appointments found: <?= htmlspecialchars($_SESSION['name']) ?>.</p>
+        <p class="no-data">❌ No appointments found for Doctor Name : <?= htmlspecialchars($_SESSION['name']) ?>.</p>
       <?php endif; ?>
   </div>
 </body>
