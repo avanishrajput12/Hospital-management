@@ -99,14 +99,31 @@ if ($conn->connect_error) {
       font-weight: bold;
       margin-top: 15px;
     }
+     .logout {
+      display: block;
+      text-align: right;
+      margin: 10px 20px;
+    }
+    .logout a {
+      color: #fff;
+      background: #dc3545;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .logout a:hover {
+      background: #c82333;
+    }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h2>Patient Dashboard - Your Appointments</h2>
-
-    
-
+      <div class="header">
+    <div class="logout"><a href="logout.php">Logout</a></div>
+  </div>
       <?php if (!empty($appointments)) : ?>
         <table>
           <tr>

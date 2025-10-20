@@ -78,7 +78,7 @@
             padding: 15px;
             border-radius: 30px;
             background-color: black;
-            transition: background-color 5s;
+            transition: background-color 1s;
         }
   </style>
 </head>
