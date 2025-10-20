@@ -26,8 +26,8 @@ include 'nav.php';
       border: 1px solid #ddd;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: border 0.4s ease, 
-                background-color 0.4s ease, 
-                box-shadow 0.4s ease;
+      background-color 0.4s ease, 
+      box-shadow 0.4s ease;
     }
      .container:hover, .container:focus {
     border: 2px solid blue;

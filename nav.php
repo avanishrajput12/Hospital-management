@@ -1,5 +1,6 @@
 <head>
   <title>Light / Dark Mode</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -67,23 +68,18 @@
     body.dark header {
       background: #333;
     }
-
-    /* Toggle button */
-    .toggle-btn {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #333;
-      color: #fff;
-      transition: 0.3s;
-      font-size: 18px;
-    }
-
-    body.dark .toggle-btn {
-      background: #f0f0f0;
-      color: #121212;
-    }
+    body.light{
+            background-color: white;
+        }
+    body.dark{
+            background-color: black;
+        }
+     #sbt{
+            padding: 15px;
+            border-radius: 30px;
+            background-color: black;
+            transition: background-color 5s;
+        }
   </style>
 </head>
 <body>
@@ -103,30 +99,23 @@
       <li><a href="register.php">Apply Now</a></li>
     </ul>
   </nav>
-  <button class="toggle-btn" onclick="toggleMode()">🌙</button>
+  <button id="sbt">🌙</button>
 </header>
 
 <script>
-  // Load saved theme from localStorage
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark");
-      document.querySelector(".toggle-btn").textContent = "☀️";
-    }
-  });
+ $(document).ready(function(){
+$('#sbt').on("click",function(){
+            $('body').toggleClass("light dark")
+            if($('body').hasClass('light')){
+                $(this).text('🌞');
+                $(this).css("background-color","yellow");
+            }else{
+                $(this).text('🌙')
+                $(this).css("background-color","Black");
+            }
+        })
 
-  function toggleMode() {
-    document.body.classList.toggle("dark");
+      });
 
-    const btn = document.querySelector(".toggle-btn");
-    if (document.body.classList.contains("dark")) {
-      btn.textContent = "☀️";
-      localStorage.setItem("theme", "dark");
-    } else {
-      btn.textContent = "🌙";
-      localStorage.setItem("theme", "light");
-    }
-  }
 </script>
 </body>

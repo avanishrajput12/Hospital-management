@@ -26,23 +26,16 @@
     }
 
     .contact-container {
-      background-color: #00d6e0;
       width: 90%;
       max-width: 900px;
       display: flex;
       border-radius: 15px;
       padding: 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(235, 44, 44, 0.9);
       gap: 30px;
       flex-wrap: wrap;
     }
-     .contact-container:hover, .contact-container:focus {
-    border: 2px solid blue;
-    outline: none;
-    transform: translateY(-5px);
-    background-color:lightpink;
-    box-shadow: 0 8px 20px rgba(246, 10, 18, 0.94);
-  }
+    
 
     .contact-form {
       flex: 1 1 300px;
@@ -51,13 +44,13 @@
     }
 
     .contact-form h2 {
-      color: #002e42;
+      color: #e6e9ebff;
       margin-bottom: 10px;
       font-size: 24px;
     }
 
     .contact-form p {
-      color: #004c5c;
+      color: #dee3e4ff;
       font-size: 14px;
       margin-bottom: 20px;
     }
@@ -116,7 +109,7 @@
     }
 
     footer {
-            background-color: #8be1ee;
+            background-color: #3234d3ff;
             text-align: center;
             padding: 20px;
             color: #333;
